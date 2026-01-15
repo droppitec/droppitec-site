@@ -30,11 +30,30 @@ export default function ContactForm() {
       <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 opacity-40">
         <svg className="w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
           <g opacity="0.4">
+            {/* Rectángulos de circuitos */}
             <rect x="50" y="450" width="40" height="60" fill="none" stroke="white" strokeWidth="1.5" rx="4" className="animate-pulse" />
             <rect x="1050" y="150" width="80" height="40" fill="none" stroke="white" strokeWidth="1.5" rx="6" className="animate-float" />
+            <rect x="900" y="550" width="50" height="50" fill="none" stroke="white" strokeWidth="1.5" opacity="0.2" rx="10" className="animate-pulse" style={{ animationDelay: '1s' }} />
+            
+            {/* Líneas de circuitos */}
             <path d="M 50 480 L 120 480 L 120 550" stroke="white" strokeWidth="1" fill="none" strokeDasharray="10" className="animate-dash" />
+            <path d="M 1050 170 L 980 170 L 980 250" stroke="white" strokeWidth="1" opacity="0.2" fill="none" strokeDasharray="15" className="animate-dash" style={{ animationDirection: 'reverse' }} />
+
+            {/* Nodos dispersos */}
+            <circle cx="100" cy="80" r="5" fill="white" className="animate-pulse" />
             <circle cx="200" cy="150" r="4" fill="white" className="animate-float" />
+            <circle cx="400" cy="100" r="3" fill="white" className="animate-pulse" style={{ animationDelay: '0.5s' }} />
+            <circle cx="600" cy="150" r="4" fill="white" className="animate-float" />
+            <circle cx="800" cy="120" r="3" fill="white" className="animate-drift" style={{ animationDelay: '2s' }} />
             <circle cx="950" cy="80" r="4" fill="white" className="animate-drift" />
+            <circle cx="1100" cy="300" r="4" fill="white" className="animate-pulse" style={{ animationDelay: '0.8s' }} />
+            <circle cx="750" cy="650" r="3" fill="white" className="animate-float-slow" />
+            <circle cx="450" cy="750" r="3" fill="white" className="animate-pulse" style={{ animationDelay: '1.5s' }} />
+            <circle cx="150" cy="750" r="3" fill="white" className="animate-drift" style={{ animationDelay: '2.5s' }} />
+            
+            {/* Conexiones */}
+            <line x1="100" y1="80" x2="200" y2="150" stroke="white" strokeWidth="1" opacity="0.2" className="animate-pulse" />
+            <line x1="600" y1="150" x2="800" y2="120" stroke="white" strokeWidth="1" opacity="0.15" className="animate-pulse" style={{ animationDelay: '0.3s' }} />
           </g>
         </svg>
       </div>
