@@ -1,72 +1,127 @@
+import React from 'react'
+
 const services = [
   {
-    icon: '👁️',
+    icon: (
+      <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+        <circle cx="12" cy="12" r="3" />
+      </svg>
+    ),
     title: 'UX/UI',
-    description: 'Diseñamos experiencias intuitivas.'
+    description: 'Diseñamos experiencias intuitivas.',
+    polygon: 'polygon(5% 15%, 95% 0%, 100% 85%, 15% 100%)'
   },
   {
-    icon: '⚙️',
+    icon: (
+      <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+        <path d="m9 12 2 2 4-4" />
+      </svg>
+    ),
     title: 'Desarrollo e integración',
-    description: 'Construimos tu plataforma digital.'
+    description: 'Construimos tu plataforma digital.',
+    polygon: 'polygon(0% 0%, 100% 10%, 90% 90%, 5% 100%)'
   },
   {
-    icon: '📊',
+    icon: (
+      <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="m12 14 4-4 4 4-4 4-4-4Z" />
+        <path d="M3.34 19a10 10 0 1 1 17.32 0" />
+      </svg>
+    ),
     title: 'Marketing',
-    description: 'Estrategias para crecer.'
+    description: 'Estrategias para crecer.',
+    polygon: 'polygon(10% 0%, 90% 15%, 100% 100%, 0% 85%)'
   },
   {
-    icon: '🔍',
-    title: 'Ayuda y soporte',
-    description: 'Siempre estamos contigo.'
-  },
-  {
-    icon: '💡',
-    title: 'Estrategia de producto',
-    description: 'Lanzamos soluciones innovadoras.'
-  },
-  {
-    icon: '📈',
+    icon: (
+      <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M11 15h2a2 2 0 1 0 0-4h-3c-1.1 0-2-.9-2-2.5s.9-2.5 2-2.5h2" />
+        <path d="M12 5v1M12 18v1" />
+        <circle cx="12" cy="12" r="10" />
+      </svg>
+    ),
     title: 'Análisis de datos',
-    description: 'Decisiones basadas en insights.'
+    description: 'Decisiones basadas en insights.',
+    polygon: 'polygon(0% 10%, 100% 0%, 95% 90%, 10% 100%)'
+  },
+  {
+    icon: (
+      <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 8v8M8 12h8" />
+      </svg>
+    ),
+    title: 'Estrategia de producto',
+    description: 'Lanzamos soluciones innovadoras.',
+    polygon: 'polygon(15% 0%, 100% 15%, 85% 100%, 0% 90%)'
+  },
+  {
+    icon: (
+      <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        <polyline points="7 10 12 15 17 10" />
+        <line x1="12" y1="15" x2="12" y2="3" />
+      </svg>
+    ),
+    title: 'Ayuda y soporte',
+    description: 'Siempre estamos contigo.',
+    polygon: 'polygon(5% 0%, 95% 10%, 100% 100%, 10% 85%)'
   }
 ]
 
 export default function ServicesSection() {
   return (
-    <section id="nosotros" className="py-24 px-8 md:py-16 md:px-4 bg-gradient-to-br from-[rgba(238,239,234,0.5)] to-blanco relative overflow-hidden">
+    <section id="nosotros" className="py-24 px-8 md:py-16 md:px-4 bg-[#f8f9ff] relative overflow-hidden">
+      {/* Elementos decorativos de fondo (Círculos) */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+        <div className="absolute top-20 left-10 w-24 h-24 rounded-full border border-blue-100 opacity-60" />
+        <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full border border-blue-100 opacity-60" />
+        <div className="absolute top-1/2 left-1/4 w-12 h-12 rounded-full border border-blue-100 opacity-60" />
+        <div className="absolute top-1/3 right-1/4 w-20 h-20 rounded-full border border-blue-100 opacity-60" />
+      </div>
+
       <div className="max-w-[1200px] mx-auto relative z-10">
-        <h2 className="font-sans text-4xl md:text-3xl font-bold text-gris-oscuro mb-12 md:mb-8 uppercase tracking-wide relative">
+        <h2 className="font-sans text-3xl md:text-2xl font-bold text-gris-oscuro mb-16 md:mb-12 uppercase tracking-wider">
           NUESTROS SERVICIOS
-          <span className="block w-[60px] h-1 bg-azul mt-2"></span>
+          <span className="block w-20 h-[3px] bg-azul mt-3"></span>
         </h2>
         
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] md:grid-cols-1 gap-8 md:gap-6 relative z-20">
+        {/* Red de conexiones (SVG de fondo) */}
+        <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-20" viewBox="0 0 1200 800">
+          <path d="M200,250 C350,150 500,300 650,200 S950,300 1100,250" stroke="#4b66f7" fill="none" strokeWidth="1" />
+          <path d="M150,550 C300,450 450,600 600,500 S900,600 1050,550" stroke="#4b66f7" fill="none" strokeWidth="1" />
+          <path d="M300,200 L400,500 M600,150 L650,550 M900,200 L850,550" stroke="#4b66f7" fill="none" strokeWidth="0.5" />
+        </svg>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8 relative z-10">
           {services.map((service, index) => (
-            <div key={index} className="bg-blanco p-10 md:p-8 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] transition-all duration-300 relative z-10 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgba(75,102,247,0.2)]">
-              <div className="text-5xl mb-6 flex items-center justify-center w-20 h-20 bg-[rgba(75,102,247,0.1)] rounded-2xl">
-                {service.icon}
+            <div 
+              key={index} 
+              className="relative group transition-transform duration-500 hover:scale-105"
+              style={{ 
+                marginTop: index % 3 === 1 ? '2rem' : '0', // Efecto escalonado
+                animationDelay: `${index * 100}ms`
+              }}
+            >
+              <div 
+                className="bg-white p-12 md:p-10 shadow-[0_15px_40px_rgba(75,102,247,0.08)] flex flex-col items-center text-center"
+                style={{ clipPath: service.polygon }}
+              >
+                <div className="text-azul mb-6 transition-transform duration-300 group-hover:scale-110">
+                  {service.icon}
+                </div>
+                <h3 className="font-sans text-xl font-bold text-gris-oscuro mb-3 leading-tight">
+                  {service.title}
+                </h3>
+                <p className="font-sans text-sm text-gris-oscuro opacity-70 leading-relaxed max-w-[200px]">
+                  {service.description}
+                </p>
               </div>
-              <h3 className="font-sans text-2xl font-bold text-gris-oscuro mb-4">{service.title}</h3>
-              <p className="font-sans text-base text-gris-oscuro leading-relaxed opacity-80">{service.description}</p>
             </div>
           ))}
         </div>
-        
-        {/* Líneas de conexión decorativas */}
-        <svg className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none opacity-30" viewBox="0 0 1200 800" preserveAspectRatio="none">
-          <g stroke="rgba(75, 102, 247, 0.2)" strokeWidth="2" fill="none">
-            <path d="M 200 200 Q 300 150 400 200" />
-            <path d="M 400 200 Q 500 250 600 200" />
-            <path d="M 600 200 Q 700 150 800 200" />
-            <path d="M 200 400 Q 300 350 400 400" />
-            <path d="M 400 400 Q 500 450 600 400" />
-            <path d="M 600 400 Q 700 350 800 400" />
-            <path d="M 200 200 L 200 400" />
-            <path d="M 400 200 L 400 400" />
-            <path d="M 600 200 L 600 400" />
-            <path d="M 800 200 L 800 400" />
-          </g>
-        </svg>
       </div>
     </section>
   )
