@@ -76,53 +76,59 @@ export default function ServicesSection() {
     <section id="nosotros" className="py-24 px-8 md:py-16 md:px-4 bg-[#f8f9ff] relative overflow-hidden">
       {/* Elementos decorativos de fondo (Círculos) */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-20 left-10 w-24 h-24 rounded-full border border-blue-100 opacity-60" />
-        <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full border border-blue-100 opacity-60" />
-        <div className="absolute top-1/2 left-1/4 w-12 h-12 rounded-full border border-blue-100 opacity-60" />
-        <div className="absolute top-1/3 right-1/4 w-20 h-20 rounded-full border border-blue-100 opacity-60" />
+        <div className="absolute top-20 left-10 w-24 h-24 rounded-full border border-blue-100 opacity-60 animate-float" />
+        <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full border border-blue-100 opacity-60 animate-float-slow" />
+        <div className="absolute top-1/2 left-1/4 w-12 h-12 rounded-full border border-blue-100 opacity-60 animate-pulse" />
+        <div className="absolute top-1/3 right-1/4 w-20 h-20 rounded-full border border-blue-100 opacity-60 animate-drift" />
       </div>
 
       <div className="max-w-[1200px] mx-auto relative z-10">
         <h2 className="font-sans text-3xl md:text-2xl font-bold text-gris-oscuro mb-16 md:mb-12 uppercase tracking-wider">
           NUESTROS SERVICIOS
-          <span className="block w-20 h-[3px] bg-azul mt-3"></span>
+          <span className="block w-20 h-[3px] bg-azul mt-3 animate-pulse"></span>
         </h2>
         
         {/* Red de conexiones (SVG de fondo) */}
         <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-20" viewBox="0 0 1200 800">
-          <path d="M200,250 C350,150 500,300 650,200 S950,300 1100,250" stroke="#4b66f7" fill="none" strokeWidth="1" />
-          <path d="M150,550 C300,450 450,600 600,500 S900,600 1050,550" stroke="#4b66f7" fill="none" strokeWidth="1" />
-          <path d="M300,200 L400,500 M600,150 L650,550 M900,200 L850,550" stroke="#4b66f7" fill="none" strokeWidth="0.5" />
+          <path d="M200,250 C350,150 500,300 650,200 S950,300 1100,250" stroke="#4b66f7" fill="none" strokeWidth="1" strokeDasharray="10" className="animate-dash" />
+          <path d="M150,550 C300,450 450,600 600,500 S900,600 1050,550" stroke="#4b66f7" fill="none" strokeWidth="1" strokeDasharray="15" className="animate-dash" style={{ animationDirection: 'reverse' }} />
+          <path d="M300,200 L400,500 M600,150 L650,550 M900,200 L850,550" stroke="#4b66f7" fill="none" strokeWidth="0.5" strokeDasharray="5" className="animate-pulse" />
         </svg>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8 relative z-10">
           {services.map((service, index) => (
             <div 
               key={index} 
-              className="relative group transition-transform duration-500 hover:scale-105"
+              className="relative group transition-all duration-500 hover:-translate-y-2"
               style={{ 
                 marginTop: index % 3 === 1 ? '2rem' : '0', // Efecto escalonado
                 animationDelay: `${index * 100}ms`
               }}
             >
+              {/* Resplandor de fondo en hover */}
+              <div className="absolute inset-0 bg-azul/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
+
               {/* Contenedor del borde del polígono */}
               <div 
-                className="bg-azul/10 p-[1.5px] transition-colors duration-300 group-hover:bg-azul/30"
+                className="relative bg-azul/10 p-[1.5px] transition-all duration-300 group-hover:bg-azul/50 group-hover:shadow-[0_20px_50px_rgba(75,102,247,0.15)]"
                 style={{ clipPath: service.polygon }}
               >
                 <div 
-                  className="bg-white p-12 md:p-10 shadow-[0_15px_40px_rgba(75,102,247,0.08)] flex flex-col items-center text-center h-full"
+                  className="bg-white p-12 md:p-10 flex flex-col items-center text-center h-full transition-colors duration-300 group-hover:bg-white/95"
                   style={{ clipPath: service.polygon }}
                 >
-                  <div className="text-azul mb-6 transition-transform duration-300 group-hover:scale-110">
+                  <div className="text-azul mb-6 transition-all duration-500 group-hover:scale-125 group-hover:rotate-6">
                     {service.icon}
                   </div>
-                  <h3 className="font-sans text-xl font-bold text-gris-oscuro mb-3 leading-tight">
+                  <h3 className="font-sans text-xl font-bold text-gris-oscuro mb-3 leading-tight transition-colors duration-300 group-hover:text-azul">
                     {service.title}
                   </h3>
                   <p className="font-sans text-sm text-gris-oscuro opacity-70 leading-relaxed max-w-[200px]">
                     {service.description}
                   </p>
+                  
+                  {/* Detalle decorativo interno que aparece en hover */}
+                  <div className="mt-6 w-0 h-1 bg-azul transition-all duration-500 group-hover:w-12"></div>
                 </div>
               </div>
             </div>
