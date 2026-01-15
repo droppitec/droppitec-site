@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function NavHeader() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -34,11 +35,19 @@ export default function NavHeader() {
         : 'bg-[rgba(75,102,247,0.95)]'
     } backdrop-blur-[10px]`}>
       <div className="max-w-[1200px] mx-auto px-8 flex justify-between items-center">
-        <div className="flex items-center">
-          <span className="font-sans text-2xl font-bold text-blanco tracking-tight">
-            droppitec
-          </span>
-        </div>
+        <button 
+          onClick={() => scrollToSection('inicio')}
+          className="flex items-center cursor-pointer"
+        >
+          <Image 
+            src="/images/droppitec_logo_blanco.svg" 
+            alt="Droppitec" 
+            width={180} 
+            height={42}
+            className="h-8 md:h-10 w-auto"
+            priority
+          />
+        </button>
         
         <div className="flex items-center gap-8 md:gap-4">
           <button 
