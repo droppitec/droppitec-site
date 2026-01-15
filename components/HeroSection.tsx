@@ -109,10 +109,10 @@ export default function HeroSection() {
       </div>
       
       <div className="relative z-10 max-w-[1400px] w-full text-center px-4">
-        <p className="font-sans text-xl md:text-lg text-[rgba(238,239,234,0.9)] mb-6 font-medium tracking-wide">
+        <p className="font-sans text-xl md:text-lg text-[rgba(238,239,234,0.9)] mb-6 font-light tracking-wide">
           Diseñamos, desarrollamos y escalamos soluciones digitales.
         </p>
-        <h1 className="font-sans text-[clamp(5rem,15vw,11rem)] md:text-[clamp(3.5rem,14vw,7rem)] font-bold leading-[0.95] text-white flex flex-col items-center">
+        <h1 className="font-title text-[clamp(4rem,12vw,9rem)] md:text-[clamp(2.5rem,10vw,6rem)] font-black leading-[0.9] text-white flex flex-col items-center">
           <span className="block tracking-tighter">Convirtiendo</span>
           <span className="block tracking-tighter">tus ideas</span>
           <span className="block tracking-tighter">

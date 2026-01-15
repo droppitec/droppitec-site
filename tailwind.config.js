@@ -14,7 +14,8 @@ module.exports = {
         blanco: '#eeefea',
       },
       fontFamily: {
-        sans: ['var(--font-roboto)', 'Roboto', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        title: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         float: {

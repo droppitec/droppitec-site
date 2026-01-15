@@ -56,7 +56,7 @@ export default function SuccessCasesSection() {
       </div>
 
       <div className="max-w-[1400px] mx-auto relative z-10">
-        <h2 className="font-sans text-3xl md:text-2xl font-bold text-gris-oscuro mb-16 md:mb-12 uppercase tracking-wider">
+        <h2 className="font-title text-3xl md:text-2xl font-black text-gris-oscuro mb-16 md:mb-12 tracking-wider">
           Casos de éxito
           <span className="block w-20 h-[3px] bg-azul mt-3 animate-pulse"></span>
         </h2>
@@ -91,11 +91,11 @@ export default function SuccessCasesSection() {
                 {/* Línea decorativa que crece */}
                 <div className="w-8 h-[2px] bg-azul mb-4 transition-all duration-500 group-hover:w-16 group-hover:bg-white" />
                 
-                <h3 className="font-sans text-2xl md:text-3xl font-bold text-white mb-1 transition-colors duration-300 group-hover:text-white">
+                <h3 className="font-title text-xl md:text-2xl font-black text-white mb-1 transition-colors duration-300 group-hover:text-white leading-tight">
                   {caseItem.title}
                 </h3>
                 
-                <p className="font-sans text-sm md:text-base text-white/80 font-medium leading-tight max-w-[200px] opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                <p className="font-sans text-sm md:text-base text-white/80 font-light leading-tight max-w-[200px] opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
                   {caseItem.subtitle}
                 </p>
               </div>

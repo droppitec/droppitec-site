@@ -83,7 +83,7 @@ export default function ServicesSection() {
       </div>
 
       <div className="max-w-[1200px] mx-auto relative z-10">
-        <h2 className="font-sans text-3xl md:text-2xl font-bold text-gris-oscuro mb-16 md:mb-12 uppercase tracking-wider">
+        <h2 className="font-title text-3xl md:text-2xl font-black text-gris-oscuro mb-16 md:mb-12 tracking-wider">
           NUESTROS SERVICIOS
           <span className="block w-20 h-[3px] bg-azul mt-3 animate-pulse"></span>
         </h2>
@@ -120,10 +120,10 @@ export default function ServicesSection() {
                   <div className="text-azul mb-6 transition-all duration-500 group-hover:scale-125 group-hover:rotate-6">
                     {service.icon}
                   </div>
-                  <h3 className="font-sans text-xl font-bold text-gris-oscuro mb-3 leading-tight transition-colors duration-300 group-hover:text-azul">
+                  <h3 className="font-title text-lg font-black text-gris-oscuro mb-3 leading-tight transition-colors duration-300 group-hover:text-azul">
                     {service.title}
                   </h3>
-                  <p className="font-sans text-sm text-gris-oscuro opacity-70 leading-relaxed max-w-[200px]">
+                  <p className="font-sans text-sm text-gris-oscuro opacity-70 leading-relaxed max-w-[200px] font-light">
                     {service.description}
                   </p>
                   

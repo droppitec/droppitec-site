@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { roboto } from './fonts'
+import { inter } from './fonts'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={roboto.variable}>
+      <body className={inter.variable}>
         {children}
       </body>
     </html>

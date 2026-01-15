@@ -61,10 +61,10 @@ export default function ContactForm() {
       <div className="max-w-[1000px] mx-auto relative z-10 text-center text-white">
         {!showForm ? (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <h2 className="font-sans text-7xl md:text-5xl font-bold mb-4 tracking-tighter">
+            <h2 className="font-title text-7xl md:text-5xl font-black mb-4 tracking-tighter">
               Contanos
             </h2>
-            <p className="font-sans text-xl md:text-lg font-bold mb-10 opacity-90 tracking-widest uppercase">
+            <p className="font-sans text-xl md:text-lg font-light mb-10 opacity-90 tracking-widest">
               ¿Cómo podemos ayudarte?
             </p>
 
@@ -74,7 +74,7 @@ export default function ContactForm() {
             </div>
 
             <div className="flex flex-col gap-6 mb-16">
-              <a href="tel:+5403535633463" className="font-sans text-4xl md:text-2xl font-bold hover:text-white transition-colors duration-300">
+              <a href="tel:+5403535633463" className="font-title text-4xl md:text-2xl hover:text-white transition-colors duration-300">
                 +54 (0353) 5633463
               </a>
             </div>
@@ -93,12 +93,12 @@ export default function ContactForm() {
 
             <button 
               onClick={() => setShowForm(true)}
-              className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-sans text-xl font-bold hover:bg-white hover:text-gris-oscuro transition-all duration-500 transform hover:-translate-y-1 active:scale-95 shadow-xl"
+              className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-title text-xl font-black hover:bg-white hover:text-azul transition-all duration-500 transform hover:-translate-y-1 active:scale-95 shadow-xl"
             >
               Contactar por web
             </button>
 
-            <p className="mt-20 opacity-60 text-sm">
+            <p className="mt-20 opacity-60 text-sm font-light">
               © Copyright 2026 Droppitec - Todos los derechos reservados
             </p>
           </div>
@@ -106,13 +106,13 @@ export default function ContactForm() {
           <div className="animate-in fade-in zoom-in-95 duration-700 max-w-[700px] mx-auto">
             <button 
               onClick={() => setShowForm(false)}
-              className="mb-8 flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-300"
+              className="mb-8 flex items-center gap-2 text-white/60 hover:text-white transition-colors duration-300 font-light"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
               Volver
             </button>
             
-            <h2 className="font-sans text-4xl font-bold mb-8">Escribinos</h2>
+            <h2 className="font-title text-4xl font-black mb-8">Escribinos</h2>
             
             <form className="flex flex-col gap-6 text-left" onSubmit={handleSubmit}>
               <div className="flex flex-col gap-2">
@@ -122,7 +122,7 @@ export default function ContactForm() {
                   placeholder="Nombre"
                   value={formData.name}
                   onChange={handleChange}
-                  className="font-sans text-lg p-5 border-2 border-white/10 rounded-2xl bg-white/5 text-white transition-all duration-300 focus:outline-none focus:border-azul focus:bg-white/10 placeholder:text-white/30"
+                  className="font-sans text-lg p-5 border-2 border-white/10 rounded-2xl bg-white/5 text-white transition-all duration-300 focus:outline-none focus:border-white focus:bg-white/10 placeholder:text-white/30 font-light"
                   required
                 />
               </div>
@@ -133,7 +133,7 @@ export default function ContactForm() {
                   placeholder="Tu Email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="font-sans text-lg p-5 border-2 border-white/10 rounded-2xl bg-white/5 text-white transition-all duration-300 focus:outline-none focus:border-azul focus:bg-white/10 placeholder:text-white/30"
+                  className="font-sans text-lg p-5 border-2 border-white/10 rounded-2xl bg-white/5 text-white transition-all duration-300 focus:outline-none focus:border-white focus:bg-white/10 placeholder:text-white/30 font-light"
                   required
                 />
               </div>
@@ -143,13 +143,13 @@ export default function ContactForm() {
                   placeholder="¿En qué podemos ayudarte?"
                   value={formData.message}
                   onChange={handleChange}
-                  className="font-sans text-lg p-5 border-2 border-white/10 rounded-2xl bg-white/5 text-white transition-all duration-300 focus:outline-none focus:border-azul focus:bg-white/10 resize-y min-h-[180px] placeholder:text-white/30"
+                  className="font-sans text-lg p-5 border-2 border-white/10 rounded-2xl bg-white/5 text-white transition-all duration-300 focus:outline-none focus:border-white focus:bg-white/10 resize-y min-h-[180px] placeholder:text-white/30 font-light"
                   required
                 />
               </div>
               <button 
                 type="submit" 
-                className="bg-azul text-white px-12 py-5 rounded-2xl font-sans text-xl font-bold hover:bg-[#3d56d6] hover:-translate-y-1 transition-all duration-300 shadow-2xl"
+                className="bg-white text-azul px-12 py-5 rounded-2xl font-title text-xl font-black hover:bg-blanco hover:-translate-y-1 transition-all duration-300 shadow-2xl"
               >
                 Enviar Mensaje
               </button>
@@ -160,4 +160,3 @@ export default function ContactForm() {
     </section>
   )
 }
-
