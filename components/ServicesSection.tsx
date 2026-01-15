@@ -105,19 +105,25 @@ export default function ServicesSection() {
                 animationDelay: `${index * 100}ms`
               }}
             >
+              {/* Contenedor del borde del polígono */}
               <div 
-                className="bg-white p-12 md:p-10 shadow-[0_15px_40px_rgba(75,102,247,0.08)] flex flex-col items-center text-center"
+                className="bg-azul/10 p-[1.5px] transition-colors duration-300 group-hover:bg-azul/30"
                 style={{ clipPath: service.polygon }}
               >
-                <div className="text-azul mb-6 transition-transform duration-300 group-hover:scale-110">
-                  {service.icon}
+                <div 
+                  className="bg-white p-12 md:p-10 shadow-[0_15px_40px_rgba(75,102,247,0.08)] flex flex-col items-center text-center h-full"
+                  style={{ clipPath: service.polygon }}
+                >
+                  <div className="text-azul mb-6 transition-transform duration-300 group-hover:scale-110">
+                    {service.icon}
+                  </div>
+                  <h3 className="font-sans text-xl font-bold text-gris-oscuro mb-3 leading-tight">
+                    {service.title}
+                  </h3>
+                  <p className="font-sans text-sm text-gris-oscuro opacity-70 leading-relaxed max-w-[200px]">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="font-sans text-xl font-bold text-gris-oscuro mb-3 leading-tight">
-                  {service.title}
-                </h3>
-                <p className="font-sans text-sm text-gris-oscuro opacity-70 leading-relaxed max-w-[200px]">
-                  {service.description}
-                </p>
               </div>
             </div>
           ))}
