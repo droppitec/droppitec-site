@@ -71,7 +71,7 @@ export default function SuccessCasesSection() {
           {cases.map((caseItem, index) => (
             <div 
               key={index} 
-              className={`relative group overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${getGridSpan(index)}`}
+              className={`relative group overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:cursor-pointer ${getGridSpan(index)}`}
             >
               {/* Imagen de fondo con movimiento dinámico */}
               <div 
