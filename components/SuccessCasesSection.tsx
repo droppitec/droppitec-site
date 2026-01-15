@@ -1,59 +1,109 @@
+import React from 'react'
+
 const cases = [
-  { name: 'InnovateX', icon: '🚀' },
-  { name: 'ANALYZA', icon: '📊' },
-  { name: 'RoboSol', icon: '🤖' },
-  { name: 'Cloudify', icon: '☁️' },
-  { name: 'AnboSol', icon: '📈' },
-  { name: 'ConnectGlobal', icon: '🌐' },
-  { name: 'TechFlow', icon: '⚡' },
-  { name: 'DataSync', icon: '🔄' },
-  { name: 'NextGen', icon: '✨' },
-  { name: 'SmartCore', icon: '💎' }
+  { 
+    title: 'Fema', 
+    subtitle: 'Electricidad e iluminación', 
+    image: 'https://images.unsplash.com/photo-1558211583-d26f610c1eb1?q=80&w=1000&auto=format&fit=crop'
+  },
+  { 
+    title: 'Med Estetic', 
+    subtitle: 'Estética madrileña', 
+    image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1000&auto=format&fit=crop'
+  },
+  { 
+    title: 'Mariápolis', 
+    subtitle: 'Desarrollo urbanístico', 
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop'
+  },
+  { 
+    title: 'Produsem', 
+    subtitle: 'Líder argentina en forrajes', 
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1000&auto=format&fit=crop'
+  },
+  { 
+    title: 'LeParc', 
+    subtitle: 'Concesionario oficial Peugeot', 
+    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1000&auto=format&fit=crop'
+  },
+  { 
+    title: 'Delforge Law', 
+    subtitle: 'Principado de Mónaco', 
+    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop'
+  }
 ]
+
+// Función para determinar el tamaño del mosaico dinámicamente según el índice
+const getGridSpan = (index: number) => {
+  const spans = [
+    'md:col-span-1 md:row-span-1',
+    'md:col-span-1 md:row-span-1',
+    'md:col-span-2 md:row-span-2',
+    'md:col-span-2 md:row-span-1',
+    'md:col-span-1 md:row-span-1',
+    'md:col-span-1 md:row-span-1',
+  ];
+  return spans[index % spans.length];
+};
 
 export default function SuccessCasesSection() {
   return (
-    <section id="casos-exito" className="py-24 px-8 md:py-16 md:px-4 bg-azul relative overflow-hidden">
-      <div className="max-w-[1200px] mx-auto relative z-10">
-        <div className="text-center mb-16 md:mb-8">
-          <h2 className="font-sans text-4xl md:text-3xl font-bold text-blanco inline-block bg-[rgba(40,42,43,0.3)] px-8 py-4 md:px-6 md:py-3 rounded-xl backdrop-blur-[10px]">
-            Casos de Éxito
-          </h2>
-        </div>
-        
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] md:grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-6 md:gap-4 relative z-20">
+    <section id="casos-exito" className="py-24 px-8 md:py-16 md:px-4 bg-[#f0f2f9] relative overflow-hidden">
+      {/* Elementos decorativos de fondo (similar a Services) */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden opacity-50">
+        <div className="absolute top-40 right-10 w-32 h-32 rounded-full border border-blue-200 animate-float-slow" />
+        <div className="absolute bottom-40 left-10 w-24 h-24 rounded-full border border-blue-200 animate-float" />
+      </div>
+
+      <div className="max-w-[1400px] mx-auto relative z-10">
+        <h2 className="font-sans text-3xl md:text-2xl font-bold text-gris-oscuro mb-16 md:mb-12 uppercase tracking-wider">
+          Casos de éxito
+          <span className="block w-20 h-[3px] bg-azul mt-3 animate-pulse"></span>
+        </h2>
+
+        {/* Red de conexiones que une los casos */}
+        <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-30" viewBox="0 0 1400 1000">
+          <path d="M100,200 Q400,100 700,500 T1300,800" stroke="#4b66f7" fill="none" strokeWidth="1" strokeDasharray="12" className="animate-dash" />
+          <path d="M1300,100 Q900,400 700,500 T100,900" stroke="#4b66f7" fill="none" strokeWidth="1" strokeDasharray="12" className="animate-dash" style={{ animationDirection: 'reverse' }} />
+        </svg>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[300px] gap-6 relative z-10">
           {cases.map((caseItem, index) => (
-            <div key={index} className="bg-blanco p-8 md:p-6 rounded-xl border-2 border-dashed border-gris-claro text-center transition-all duration-300 hover:-translate-y-1 hover:border-azul hover:shadow-[0_8px_25px_rgba(0,0,0,0.15)]">
-              <div className="text-4xl mb-4 flex items-center justify-center">{caseItem.icon}</div>
-              <h3 className="font-sans text-xl font-bold text-gris-oscuro">{caseItem.name}</h3>
+            <div 
+              key={index} 
+              className={`relative group overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${getGridSpan(index)}`}
+            >
+              {/* Imagen de fondo con movimiento dinámico */}
+              <div 
+                className="absolute inset-0 z-0 transition-transform duration-1000 ease-out group-hover:scale-110"
+                style={{ 
+                  backgroundImage: `url(${caseItem.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              />
+              
+              {/* Overlay gradiente */}
+              <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-500" />
+
+              {/* Contenido de texto interactivo */}
+              <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end transform transition-transform duration-500">
+                {/* Línea decorativa que crece */}
+                <div className="w-8 h-[2px] bg-azul mb-4 transition-all duration-500 group-hover:w-16 group-hover:bg-white" />
+                
+                <h3 className="font-sans text-2xl md:text-3xl font-bold text-white mb-1 transition-colors duration-300 group-hover:text-white">
+                  {caseItem.title}
+                </h3>
+                
+                <p className="font-sans text-sm md:text-base text-white/80 font-medium leading-tight max-w-[200px] opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                  {caseItem.subtitle}
+                </p>
+              </div>
+
+              {/* Borde brillante en hover */}
+              <div className="absolute inset-0 z-30 border-0 group-hover:border-2 border-azul/30 transition-all duration-500 rounded-2xl pointer-events-none" />
             </div>
           ))}
-        </div>
-        
-        {/* Patrón de fondo decorativo */}
-        <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0 opacity-40">
-          <svg className="w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
-            <g opacity="0.15">
-              {/* Círculos decorativos */}
-              <circle cx="100" cy="100" r="3" fill="white" />
-              <circle cx="300" cy="150" r="3" fill="white" />
-              <circle cx="500" cy="100" r="3" fill="white" />
-              <circle cx="700" cy="150" r="3" fill="white" />
-              <circle cx="900" cy="100" r="3" fill="white" />
-              <circle cx="1100" cy="150" r="3" fill="white" />
-              
-              {/* Líneas punteadas */}
-              <line x1="100" y1="100" x2="300" y2="150" stroke="white" strokeWidth="1" strokeDasharray="5,5" />
-              <line x1="300" y1="150" x2="500" y2="100" stroke="white" strokeWidth="1" strokeDasharray="5,5" />
-              <line x1="500" y1="100" x2="700" y2="150" stroke="white" strokeWidth="1" strokeDasharray="5,5" />
-              <line x1="700" y1="150" x2="900" y2="100" stroke="white" strokeWidth="1" strokeDasharray="5,5" />
-              <line x1="900" y1="100" x2="1100" y2="150" stroke="white" strokeWidth="1" strokeDasharray="5,5" />
-              
-              {/* Cuadrados decorativos */}
-              <rect x="150" y="600" width="40" height="40" fill="none" stroke="white" strokeWidth="1" rx="4" />
-              <rect x="950" y="650" width="50" height="50" fill="none" stroke="white" strokeWidth="1" rx="4" />
-            </g>
-          </svg>
         </div>
       </div>
     </section>
