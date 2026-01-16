@@ -48,7 +48,7 @@ const getGridSpan = (index: number) => {
 
 export default function SuccessCasesSection() {
   return (
-    <section id="casos-exito" className="py-24 px-8 md:py-16 md:px-4 bg-[#f0f2f9] relative overflow-hidden">
+    <section id="casos-exito" className="py-24 px-6 md:py-16 md:px-4 bg-[#f0f2f9] relative overflow-hidden">
       {/* Elementos decorativos de fondo (similar a Services) */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden opacity-50">
         <div className="absolute top-40 right-10 w-32 h-32 rounded-full border border-blue-200 animate-float-slow" />
@@ -67,7 +67,7 @@ export default function SuccessCasesSection() {
           <path d="M1300,100 Q900,400 700,500 T100,900" stroke="#4b66f7" fill="none" strokeWidth="1" strokeDasharray="12" className="animate-dash" style={{ animationDirection: 'reverse' }} />
         </svg>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[300px] gap-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[250px] md:auto-rows-[300px] gap-4 md:gap-6 relative z-10">
           {cases.map((caseItem, index) => (
             <div 
               key={index} 

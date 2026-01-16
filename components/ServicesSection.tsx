@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 
 const services = [
@@ -83,7 +85,7 @@ export default function ServicesSection() {
       </div>
 
       <div className="max-w-[1200px] mx-auto relative z-10">
-        <h2 className="font-title text-3xl md:text-2xl font-black text-gris-oscuro mb-16 md:mb-12 tracking-wider">
+        <h2 className="font-title text-[clamp(2rem,6vw,3rem)] md:text-3xl font-black text-gris-oscuro mb-16 md:mb-12 tracking-wider">
           NUESTROS SERVICIOS
           <span className="block w-20 h-[3px] bg-azul mt-3 animate-pulse"></span>
         </h2>
@@ -101,10 +103,18 @@ export default function ServicesSection() {
               key={index} 
               className="relative group transition-all duration-500 hover:-translate-y-2"
               style={{ 
-                marginTop: index % 3 === 1 ? '2rem' : '0', // Efecto escalonado
+                marginTop: '0', // Por defecto sin margen superior
                 animationDelay: `${index * 100}ms`
               }}
             >
+              {/* Ajustar marginTop solo en pantallas grandes (lg) */}
+              <style jsx>{`
+                @media (min-width: 1024px) {
+                  div {
+                    margin-top: ${index % 3 === 1 ? '2rem' : '0'};
+                  }
+                }
+              `}</style>
               {/* Resplandor de fondo en hover */}
               <div className="absolute inset-0 bg-azul/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
 

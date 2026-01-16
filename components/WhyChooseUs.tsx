@@ -39,7 +39,7 @@ export default function WhyChooseUs() {
   return (
     <section className="min-h-[60vh] flex items-center py-24 px-8 md:py-16 md:px-4 bg-white overflow-hidden">
       <div className="max-w-[1200px] mx-auto text-center w-full">
-        <h2 className="font-title text-5xl md:text-3xl font-black text-gris-oscuro mb-4 tracking-tight">
+        <h2 className="font-title text-[clamp(2.5rem,8vw,5rem)] md:text-5xl font-black text-gris-oscuro mb-4 tracking-tight">
           Por qué elegirnos
         </h2>
         <p className="font-sans text-xl md:text-lg text-gris-oscuro mb-8 opacity-80 tracking-widest font-light">

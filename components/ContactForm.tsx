@@ -61,10 +61,10 @@ export default function ContactForm() {
       <div className="max-w-[1000px] mx-auto relative z-10 text-center text-white">
         {!showForm ? (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
-            <h2 className="font-title text-7xl md:text-5xl font-black mb-4 tracking-tighter">
+            <h2 className="font-title text-[clamp(3.5rem,10vw,7rem)] md:text-7xl mb-4 tracking-tighter font-black">
               Contanos
             </h2>
-            <p className="font-sans text-xl md:text-lg font-light mb-10 opacity-90 tracking-widest">
+            <p className="font-sans text-lg md:text-xl font-light mb-10 opacity-90 tracking-widest">
               ¿Cómo podemos ayudarte?
             </p>
 

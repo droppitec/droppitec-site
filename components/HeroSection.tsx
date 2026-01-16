@@ -2,7 +2,7 @@
 
 export default function HeroSection() {
   return (
-    <section id="inicio" className="relative min-h-screen bg-azul flex items-center justify-center pt-[120px] pb-16 px-8 md:pt-[100px] md:pb-12 md:px-4 overflow-hidden">
+    <section id="inicio" className="relative min-h-screen bg-azul flex items-center justify-center pt-[100px] pb-12 px-4 md:pt-[120px] md:pb-16 md:px-8 overflow-hidden">
       <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0">
         <svg className="w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
           {/* Nodos y conexiones de fondo - Estilo Circuito */}
@@ -109,10 +109,10 @@ export default function HeroSection() {
       </div>
       
       <div className="relative z-10 max-w-[1400px] w-full text-center px-4">
-        <p className="font-sans text-xl md:text-lg text-[rgba(238,239,234,0.9)] mb-6 font-light tracking-wide">
+        <p className="font-sans text-lg md:text-xl text-[rgba(238,239,234,0.9)] mb-6 font-light tracking-wide">
           Diseñamos, desarrollamos y escalamos soluciones digitales.
         </p>
-        <h1 className="font-title text-[clamp(4rem,12vw,9rem)] md:text-[clamp(2.5rem,10vw,6rem)] font-black leading-[0.9] text-white flex flex-col items-center">
+        <h1 className="font-title text-[clamp(2.2rem,8vw,4rem)] md:text-[clamp(4rem,12vw,9rem)] leading-[1.1] md:leading-[0.9] text-white flex flex-col items-center font-black">
           <span className="block tracking-tighter">Convirtiendo</span>
           <span className="block tracking-tighter">tus ideas</span>
           <span className="block tracking-tighter">
