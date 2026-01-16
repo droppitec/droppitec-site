@@ -82,6 +82,20 @@ export default function ServicesSection() {
         <div className="absolute bottom-20 right-10 w-40 h-40 rounded-full border border-blue-100 opacity-60 animate-float-slow" />
         <div className="absolute top-1/2 left-1/4 w-12 h-12 rounded-full border border-blue-100 opacity-60 animate-pulse" />
         <div className="absolute top-1/3 right-1/4 w-20 h-20 rounded-full border border-blue-100 opacity-60 animate-drift" />
+        
+        {/* Elementos adicionales para mobile con más movimiento */}
+        <div className="absolute top-1/4 right-1/3 w-16 h-16 rounded-full border border-blue-200 opacity-40 animate-float md:hidden" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute bottom-1/3 left-1/3 w-20 h-20 rounded-full border border-blue-200 opacity-40 animate-drift md:hidden" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-2/3 right-1/4 w-14 h-14 rounded-full border border-blue-200 opacity-50 animate-pulse md:hidden" style={{ animationDelay: '0.5s' }} />
+        
+        {/* Líneas animadas para mobile */}
+        <svg className="absolute inset-0 w-full h-full md:hidden opacity-30" viewBox="0 0 400 800">
+          <path d="M50,100 Q150,200 250,300 T450,500" stroke="#4b66f7" fill="none" strokeWidth="1" strokeDasharray="8" className="animate-dash" />
+          <path d="M350,50 Q250,150 150,250 T50,450" stroke="#4b66f7" fill="none" strokeWidth="1" strokeDasharray="8" className="animate-dash" style={{ animationDirection: 'reverse', animationDuration: '20s' }} />
+          <circle cx="100" cy="200" r="3" fill="#4b66f7" className="animate-pulse" />
+          <circle cx="300" cy="400" r="3" fill="#4b66f7" className="animate-float" style={{ animationDelay: '1s' }} />
+          <circle cx="200" cy="600" r="3" fill="#4b66f7" className="animate-drift" style={{ animationDelay: '2s' }} />
+        </svg>
       </div>
 
       <div className="max-w-[1200px] mx-auto relative z-10">
@@ -91,10 +105,20 @@ export default function ServicesSection() {
         </h2>
         
         {/* Red de conexiones (SVG de fondo) */}
-        <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-20" viewBox="0 0 1200 800">
+        <svg className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-20 md:opacity-20" viewBox="0 0 1200 800">
           <path d="M200,250 C350,150 500,300 650,200 S950,300 1100,250" stroke="#4b66f7" fill="none" strokeWidth="1" strokeDasharray="10" className="animate-dash" />
           <path d="M150,550 C300,450 450,600 600,500 S900,600 1050,550" stroke="#4b66f7" fill="none" strokeWidth="1" strokeDasharray="15" className="animate-dash" style={{ animationDirection: 'reverse' }} />
           <path d="M300,200 L400,500 M600,150 L650,550 M900,200 L850,550" stroke="#4b66f7" fill="none" strokeWidth="0.5" strokeDasharray="5" className="animate-pulse" />
+          
+          {/* Elementos adicionales para mobile */}
+          <g className="md:hidden opacity-40">
+            <path d="M50,100 Q200,200 350,300" stroke="#4b66f7" fill="none" strokeWidth="1.5" strokeDasharray="12" className="animate-dash" style={{ animationDuration: '15s' }} />
+            <path d="M400,50 Q250,200 100,350" stroke="#4b66f7" fill="none" strokeWidth="1.5" strokeDasharray="12" className="animate-dash" style={{ animationDirection: 'reverse', animationDuration: '18s' }} />
+            <circle cx="150" cy="250" r="4" fill="#4b66f7" className="animate-float" />
+            <circle cx="300" cy="400" r="4" fill="#4b66f7" className="animate-pulse" style={{ animationDelay: '1s' }} />
+            <circle cx="200" cy="550" r="4" fill="#4b66f7" className="animate-drift" style={{ animationDelay: '2s' }} />
+            <line x1="150" y1="250" x2="300" y2="400" stroke="#4b66f7" strokeWidth="0.5" className="animate-pulse" />
+          </g>
         </svg>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8 relative z-10">
