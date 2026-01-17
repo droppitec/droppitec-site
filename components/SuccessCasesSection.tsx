@@ -2,34 +2,34 @@ import React from 'react'
 
 const cases = [
   { 
-    title: 'Fema', 
-    subtitle: 'Electricidad e iluminación', 
-    image: 'https://images.unsplash.com/photo-1558211583-d26f610c1eb1?q=80&w=1000&auto=format&fit=crop'
+    title: 'Districen', 
+    subtitle: 'Venta mayorista de autopartes', 
+    image: '/images/portadas-caso-exitos/districen.jpg'
   },
   { 
     title: 'Med Estetic', 
     subtitle: 'Estética madrileña', 
-    image: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1000&auto=format&fit=crop'
+    image: '/images/portadas-caso-exitos/med-estetic.jpg'
   },
   { 
     title: 'Mariápolis', 
     subtitle: 'Desarrollo urbanístico', 
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop'
+    image: '/images/portadas-caso-exitos/mariapolis.jpg'
   },
   { 
     title: 'Produsem', 
     subtitle: 'Líder argentina en forrajes', 
-    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1000&auto=format&fit=crop'
+    image: '/images/portadas-caso-exitos/produsem.jpg'
   },
   { 
     title: 'LeParc', 
     subtitle: 'Concesionario oficial Peugeot', 
-    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1000&auto=format&fit=crop'
+    image: '/images/portadas-caso-exitos/leparc.jpg'
   },
   { 
     title: 'Delforge Law', 
     subtitle: 'Principado de Mónaco', 
-    image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1000&auto=format&fit=crop'
+    image: '/images/portadas-caso-exitos/delforge-law.jpg'
   }
 ]
 
