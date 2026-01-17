@@ -74,8 +74,8 @@ export default function ContactForm() {
             </div>
 
             <div className="flex flex-col gap-6 mb-16">
-              <a href="tel:+5403535633463" className="font-title text-4xl md:text-2xl hover:text-white transition-colors duration-300">
-                +54 (0353) 5633463
+              <a href="tel:+5402954668294" className="font-title text-2xl md:text-2xl hover:text-white transition-colors duration-300">
+                +54 (2954) 668294
               </a>
             </div>
 
