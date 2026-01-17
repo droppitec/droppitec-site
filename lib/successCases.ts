@@ -9,6 +9,7 @@ export const successCases = [
     images: [
       '/images/portadas-caso-exitos/districen.jpg',
       // Agrega más imágenes aquí cuando las tengas
+      
     ],
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
     year: '2025'
