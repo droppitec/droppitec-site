@@ -5,6 +5,9 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Droppitec - Soluciones Digitales',
   description: 'Diseñamos, desarrollamos y escalamos soluciones digitales',
+  icons: {
+    icon: '/images/fav.ico',
+  },
 }
 
 export default function RootLayout({

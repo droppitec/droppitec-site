@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function NavHeader() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -36,8 +37,8 @@ export default function NavHeader() {
     } md:backdrop-blur-[10px]`}>
       <div className="max-w-[1200px] mx-auto px-6 flex justify-center md:justify-between items-center">
         {/* Logo - Centrado en mobile, izquierda en desktop */}
-        <button 
-          onClick={() => scrollToSection('inicio')}
+        <Link 
+          href="/"
           className="flex items-center cursor-pointer"
         >
           <Image 
@@ -48,7 +49,7 @@ export default function NavHeader() {
             className="h-8 md:h-10 w-auto"
             priority
           />
-        </button>
+        </Link>
         
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 lg:gap-12">
