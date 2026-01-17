@@ -1,12 +1,6 @@
 import React from 'react'
-
-const cases = [
-  { 
-    title: 'Districen', 
-    subtitle: 'Venta mayorista de autopartes', 
-    image: '/images/portadas-caso-exitos/districen.jpg'
-  }
-]
+import Link from 'next/link'
+import { successCases } from '@/lib/successCases'
 
 // Función para determinar el tamaño del mosaico dinámicamente según el índice
 const getGridSpan = (index: number) => {
@@ -43,16 +37,17 @@ export default function SuccessCasesSection() {
         </svg>
 
         <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[250px] md:auto-rows-[300px] gap-4 md:gap-6 relative z-10">
-          {cases.map((caseItem, index) => (
-            <div 
-              key={index} 
-              className={`relative group overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:cursor-pointer ${getGridSpan(index)}`}
+          {successCases.map((caseItem, index) => (
+            <Link
+              key={caseItem.slug}
+              href={`/casos-exito/${caseItem.slug}`}
+              className={`relative group overflow-hidden rounded-2xl shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl cursor-pointer block ${getGridSpan(index)}`}
             >
               {/* Imagen de fondo con movimiento dinámico */}
               <div 
                 className="absolute inset-0 z-0 transition-transform duration-1000 ease-out group-hover:scale-110"
                 style={{ 
-                  backgroundImage: `url(${caseItem.image})`,
+                  backgroundImage: `url(${caseItem.coverImage})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}
@@ -77,7 +72,7 @@ export default function SuccessCasesSection() {
 
               {/* Borde brillante en hover */}
               <div className="absolute inset-0 z-30 border-0 group-hover:border-2 border-azul/30 transition-all duration-500 rounded-2xl pointer-events-none" />
-            </div>
+            </Link>
           ))}
         </div>
       </div>
