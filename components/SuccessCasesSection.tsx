@@ -5,31 +5,6 @@ const cases = [
     title: 'Districen', 
     subtitle: 'Venta mayorista de autopartes', 
     image: '/images/portadas-caso-exitos/districen.jpg'
-  },
-  { 
-    title: 'Med Estetic', 
-    subtitle: 'Estética madrileña', 
-    image: '/images/portadas-caso-exitos/med-estetic.jpg'
-  },
-  { 
-    title: 'Mariápolis', 
-    subtitle: 'Desarrollo urbanístico', 
-    image: '/images/portadas-caso-exitos/mariapolis.jpg'
-  },
-  { 
-    title: 'Produsem', 
-    subtitle: 'Líder argentina en forrajes', 
-    image: '/images/portadas-caso-exitos/produsem.jpg'
-  },
-  { 
-    title: 'LeParc', 
-    subtitle: 'Concesionario oficial Peugeot', 
-    image: '/images/portadas-caso-exitos/leparc.jpg'
-  },
-  { 
-    title: 'Delforge Law', 
-    subtitle: 'Principado de Mónaco', 
-    image: '/images/portadas-caso-exitos/delforge-law.jpg'
   }
 ]
 
