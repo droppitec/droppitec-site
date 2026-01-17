@@ -4,6 +4,8 @@ import { useState } from 'react'
 
 export default function ContactForm() {
   const [showForm, setShowForm] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,13 +17,47 @@ export default function ContactForm() {
       ...formData,
       [e.target.name]: e.target.value
     })
+    // Resetear el estado de error cuando el usuario empiece a escribir
+    if (submitStatus === 'error') {
+      setSubmitStatus('idle')
+    }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Formulario enviado:', formData)
-    setFormData({ name: '', email: '', message: '' })
-    alert('¡Gracias por contactarnos! Te responderemos pronto.')
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Error al enviar el mensaje')
+      }
+
+      // Éxito
+      setSubmitStatus('success')
+      setFormData({ name: '', email: '', message: '' })
+      
+      // Ocultar el formulario después de 2 segundos
+      setTimeout(() => {
+        setShowForm(false)
+        setSubmitStatus('idle')
+      }, 2000)
+    } catch (error) {
+      console.error('Error al enviar formulario:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -114,6 +150,18 @@ export default function ContactForm() {
             
             <h2 className="font-title text-4xl font-black mb-8">Escribinos</h2>
             
+            {submitStatus === 'success' && (
+              <div className="mb-6 p-4 bg-green-500/20 border-2 border-green-500 rounded-2xl text-green-200">
+                <p className="font-sans text-lg">¡Mensaje enviado correctamente! Te responderemos pronto.</p>
+              </div>
+            )}
+
+            {submitStatus === 'error' && (
+              <div className="mb-6 p-4 bg-red-500/20 border-2 border-red-500 rounded-2xl text-red-200">
+                <p className="font-sans text-lg">Error al enviar el mensaje. Por favor, intenta nuevamente.</p>
+              </div>
+            )}
+            
             <form className="flex flex-col gap-6 text-left" onSubmit={handleSubmit}>
               <div className="flex flex-col gap-2">
                 <input
@@ -122,7 +170,8 @@ export default function ContactForm() {
                   placeholder="Nombre"
                   value={formData.name}
                   onChange={handleChange}
-                  className="font-sans text-lg p-5 border-2 border-white/10 rounded-2xl bg-white/5 text-white transition-all duration-300 focus:outline-none focus:border-white focus:bg-white/10 placeholder:text-white/30 font-light"
+                  disabled={isSubmitting}
+                  className="font-sans text-lg p-5 border-2 border-white/10 rounded-2xl bg-white/5 text-white transition-all duration-300 focus:outline-none focus:border-white focus:bg-white/10 placeholder:text-white/30 font-light disabled:opacity-50 disabled:cursor-not-allowed"
                   required
                 />
               </div>
@@ -133,7 +182,8 @@ export default function ContactForm() {
                   placeholder="Tu Email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="font-sans text-lg p-5 border-2 border-white/10 rounded-2xl bg-white/5 text-white transition-all duration-300 focus:outline-none focus:border-white focus:bg-white/10 placeholder:text-white/30 font-light"
+                  disabled={isSubmitting}
+                  className="font-sans text-lg p-5 border-2 border-white/10 rounded-2xl bg-white/5 text-white transition-all duration-300 focus:outline-none focus:border-white focus:bg-white/10 placeholder:text-white/30 font-light disabled:opacity-50 disabled:cursor-not-allowed"
                   required
                 />
               </div>
@@ -143,15 +193,17 @@ export default function ContactForm() {
                   placeholder="¿En qué podemos ayudarte?"
                   value={formData.message}
                   onChange={handleChange}
-                  className="font-sans text-lg p-5 border-2 border-white/10 rounded-2xl bg-white/5 text-white transition-all duration-300 focus:outline-none focus:border-white focus:bg-white/10 resize-y min-h-[180px] placeholder:text-white/30 font-light"
+                  disabled={isSubmitting}
+                  className="font-sans text-lg p-5 border-2 border-white/10 rounded-2xl bg-white/5 text-white transition-all duration-300 focus:outline-none focus:border-white focus:bg-white/10 resize-y min-h-[180px] placeholder:text-white/30 font-light disabled:opacity-50 disabled:cursor-not-allowed"
                   required
                 />
               </div>
               <button 
                 type="submit" 
-                className="bg-white text-azul px-12 py-5 rounded-2xl font-title text-xl font-black hover:bg-blanco hover:-translate-y-1 transition-all duration-300 shadow-2xl"
+                disabled={isSubmitting}
+                className="bg-white text-azul px-12 py-5 rounded-2xl font-title text-xl font-black hover:bg-blanco hover:-translate-y-1 transition-all duration-300 shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
               >
-                Enviar Mensaje
+                {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
               </button>
             </form>
           </div>
